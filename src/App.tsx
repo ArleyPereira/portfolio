@@ -339,17 +339,14 @@ export default function App() {
 
                 <div className="mt-5 space-y-3 text-sm text-white/70">
                   <p>
-                    Desenvolvimento de funcionalidades relacionadas a pagamentos e manutenção do app.
+                    App de pagamentos com fluxos de transações (ex.: cobranças/recebimentos) e rotinas
+                    operacionais do usuário. Atuei na manutenção e evolução de funcionalidades,
+                    correções de bugs e melhorias de estabilidade/performance.
                   </p>
                   <p>
-                    Responsável por publicações e gerenciamento de versões na Play Store.
+                    Também fui responsável pelo ciclo de releases, incluindo geração de builds,
+                    versionamento e publicação/gerenciamento na Play Store.
                   </p>
-                </div>
-
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {['Kotlin', 'APIs REST', 'Play Store', 'Qualidade', 'Manutenção'].map((t) => (
-                    <Pill key={t}>{t}</Pill>
-                  ))}
                 </div>
               </div>
             </div>
@@ -364,7 +361,7 @@ export default function App() {
               subtitle="Ferramentas e práticas que uso para construir apps Android modernos e fáceis de evoluir."
             />
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
               {[
                 {
                   title: 'Android',
@@ -389,6 +386,15 @@ export default function App() {
                     'Firebase (Auth, Database, Storage, Crashlytics, Messaging)',
                     'Publicação/versões na Play Store',
                     'Compose Multiplatform (KMP, Koin, Ktor, Voyager)',
+                  ],
+                },
+                {
+                  title: 'I.A & Produtividade',
+                  items: [
+                    'Replicar telas a partir do Figma com mais agilidade',
+                    'Revisão de código e sugestões de refactor',
+                    'Automação de fluxos repetitivos (scripts/boilerplate)',
+                    'Criação de testes automatizados e cenários',
                   ],
                 },
               ].map((g) => (
