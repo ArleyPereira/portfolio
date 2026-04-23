@@ -21,8 +21,6 @@ const PLAY_STORE_APPS = [
       'Pagamentos e rotinas de publicação/gerenciamento na Play Store. Atuação em novas features e manutenção.',
     tags: ['Kotlin', 'Android', 'Pagamentos', 'Play Store'],
     iconSrc: iconComproPay,
-    iconFit: 'cover',
-    iconBg: 'transparent',
   },
   {
     name: 'Americanas Entrega Flash',
@@ -31,9 +29,6 @@ const PLAY_STORE_APPS = [
       'Correções e evolução do app do entregador, com foco em novas corridas, gerenciamento de entregas e tempo real.',
     tags: ['Android', 'Kotlin', 'Entrega', 'Tempo real'],
     iconSrc: iconEntregaFlash,
-    iconFit: 'contain',
-    iconBg: '#F80032',
-    iconPad: 6,
   },
   {
     name: 'Spock',
@@ -42,8 +37,6 @@ const PLAY_STORE_APPS = [
       'Aplicativo Android (B2W). Participação em correções e melhorias com foco em experiência do usuário.',
     tags: ['Android', 'Kotlin', 'Bugs', 'UX'],
     iconSrc: iconSpock,
-    iconFit: 'cover',
-    iconBg: 'transparent',
   },
 ]
 
@@ -287,7 +280,7 @@ export default function App() {
               <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]">
                 <div className="flex items-start justify-between gap-6">
                   <div>
-                    <p className="text-sm font-semibold text-white/90">Americanas Delivery</p>
+                    <p className="text-sm font-semibold text-white/90">Americanas</p>
                     <p className="mt-1 text-xs text-white/55">Desenvolvedor Android • 01/2022 — Atual</p>
                   </div>
                   <Pill>Vitória, ES</Pill>
@@ -413,20 +406,13 @@ export default function App() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-center gap-3">
-                      <div
-                        className="size-10 overflow-hidden rounded-2xl"
-                        style={{ backgroundColor: app.iconBg ?? 'transparent' }}
-                      >
+                      <div className="size-10 overflow-hidden rounded-2xl">
                         <img
                           src={app.iconSrc}
                           alt=""
-                          className={classNames(
-                            'size-10',
-                            app.iconFit === 'contain' ? 'object-contain' : 'object-cover',
-                          )}
+                          className="size-10 object-cover"
                           loading="lazy"
                           decoding="async"
-                          style={{ padding: app.iconPad ?? 0 }}
                         />
                       </div>
                       <p className="text-sm font-semibold text-white/90">{app.name}</p>
