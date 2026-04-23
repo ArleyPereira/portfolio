@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react'
 import fotoArley from './assets/foto-arley.jpeg'
-import iconComproPay from './assets/apps/compropay.svg'
-import iconSpock from './assets/apps/spock.svg'
-import iconEntregaFlash from './assets/apps/americanas-entrega-flash.svg'
+import iconComproPay from './assets/apps/compropay.png'
+import iconSpock from './assets/apps/spock.png'
+import iconEntregaFlash from './assets/apps/americanas-entrega-flash.png'
 
 const LINKS = {
   linkedin: 'https://www.linkedin.com/in/arley-santana-53546918b',
@@ -220,10 +220,15 @@ export default function App() {
                   <div>
                     <p className="text-sm font-semibold text-white/90">Resumo</p>
                     <p className="mt-2 text-sm text-white/65">
-                      Vitória, ES • Android Developer • Kotlin/Compose
+                      Vitória, ES
                     </p>
                   </div>
-                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
+                  <span className="inline-flex items-center gap-2 text-xs font-medium text-white/70 whitespace-nowrap">
+                    <span
+                      aria-hidden
+                      className="size-2 rounded-full"
+                      style={{ backgroundColor: '#00ff88' }}
+                    />
                     Disponível para oportunidades
                   </span>
                 </div>
@@ -241,7 +246,7 @@ export default function App() {
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-white/3 p-4">
                     <p className="text-xs text-white/55">Experiência</p>
-                    <p className="mt-1 text-sm font-semibold text-white/90">Android (Kotlin)</p>
+                    <p className="mt-1 text-sm font-semibold text-white/90">Android (Kotlin / Java)</p>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-white/3 p-4">
                     <p className="text-xs text-white/55">Arquitetura</p>
@@ -407,7 +412,7 @@ export default function App() {
                       <img
                         src={app.iconSrc}
                         alt=""
-                        className="size-10 rounded-2xl border border-white/10 bg-white/5 object-cover"
+                        className="size-10 rounded-xl border border-white/10 bg-white/5 object-cover"
                         loading="lazy"
                         decoding="async"
                       />
