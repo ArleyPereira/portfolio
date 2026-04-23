@@ -158,7 +158,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <a
               href={LINKS.cv}
-              className="hidden rounded-xl bg-gradient-to-r from-[color:var(--color-accent-green)] to-[color:var(--color-accent-green-2)] px-4 py-2 text-sm font-semibold text-white shadow-[var(--shadow-soft)] transition hover:-translate-y-0.5 md:inline-flex"
+              className="hidden rounded-xl bg-gradient-to-r from-[color:var(--color-accent-green)] to-[color:var(--color-accent-green-2)] px-4 py-2 text-sm font-semibold text-black shadow-[var(--shadow-soft)] transition hover:-translate-y-0.5 md:inline-flex"
             >
               Baixar CV (PDF)
             </a>
@@ -219,9 +219,6 @@ export default function App() {
                 <div className="flex items-start justify-between gap-6">
                   <div>
                     <p className="text-sm font-semibold text-white/90">Resumo</p>
-                    <p className="mt-2 text-sm text-white/65">
-                      Vitória, ES
-                    </p>
                   </div>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-white/70 whitespace-nowrap">
                     <span
@@ -237,7 +234,7 @@ export default function App() {
                   <div className="rounded-2xl border border-white/10 bg-white/3 p-4">
                     <p className="text-xs text-white/55">Empresa atual</p>
                     <p className="mt-1 text-sm font-semibold text-white/90">
-                      Americanas Delivery
+                      Americanas
                     </p>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-white/3 p-4">
@@ -280,7 +277,7 @@ export default function App() {
             />
 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6">
+              <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 transition hover:-translate-y-0.5 hover:border-[color:var(--color-accent-green)] hover:shadow-[var(--shadow-soft)]">
                 <div className="flex items-start justify-between gap-6">
                   <div>
                     <p className="text-sm font-semibold text-white/90">Americanas Delivery</p>
@@ -303,7 +300,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6">
+              <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 transition hover:-translate-y-0.5 hover:border-[color:var(--color-accent-green)] hover:shadow-[var(--shadow-soft)]">
                 <div className="flex items-start justify-between gap-6">
                   <div>
                     <p className="text-sm font-semibold text-white/90">ComproPay</p>
@@ -375,7 +372,7 @@ export default function App() {
                   <ul className="mt-4 space-y-2 text-sm text-white/70">
                     {g.items.map((it) => (
                       <li key={it} className="flex gap-2">
-                        <span className="mt-1 text-[color:var(--color-accent)]">•</span>
+                        <span className="mt-1 text-[color:var(--color-accent-green)]">•</span>
                         <span>{it}</span>
                       </li>
                     ))}
@@ -409,13 +406,15 @@ export default function App() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-center gap-3">
-                      <img
-                        src={app.iconSrc}
-                        alt=""
-                        className="size-10 rounded-xl border border-white/10 bg-white/5 object-cover"
-                        loading="lazy"
-                        decoding="async"
-                      />
+                      <div className="size-10 overflow-hidden rounded-xl bg-white/5">
+                        <img
+                          src={app.iconSrc}
+                          alt=""
+                          className="size-10 object-cover"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
                       <p className="text-sm font-semibold text-white/90">{app.name}</p>
                     </div>
                     <span className="text-white/35 transition group-hover:text-white/55" aria-hidden>
