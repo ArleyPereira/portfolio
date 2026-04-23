@@ -352,7 +352,7 @@ export default function App() {
                   </ul>
 
                   <p className="mt-4 font-semibold text-white/85">
-                    App de Abastecimento (Motoristas) <span className="text-white/55">— com.b2wdigital.spock (Atual)</span>
+                    App de Abastecimento (Motoristas)
                   </p>
                   <ul className="list-disc space-y-2 pl-5 text-white/70 marker:text-[color:var(--color-accent-green)]">
                     <li>
