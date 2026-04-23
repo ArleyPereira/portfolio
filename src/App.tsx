@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import fotoArley from './assets/foto-arley.jpeg'
 
 const LINKS = {
   linkedin: 'https://www.linkedin.com/in/arley-santana-53546918b',
@@ -104,9 +105,13 @@ export default function App() {
       <header className="sticky top-0 z-30 border-b border-white/5 bg-[color:var(--color-bg)]/75 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
           <a href="#top" className="group inline-flex items-center gap-3">
-            <span className="grid size-9 place-items-center rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/90">
-              AS
-            </span>
+            <img
+              src={fotoArley}
+              alt="Arley Santana"
+              className="size-9 rounded-xl border border-white/10 object-cover"
+              loading="eager"
+              decoding="async"
+            />
             <div className="leading-tight">
               <div className="text-sm font-semibold text-white/90">Arley Santana</div>
               <div className="text-xs text-white/55">Android Developer</div>
