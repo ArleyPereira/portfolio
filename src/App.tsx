@@ -1,5 +1,8 @@
 import type { ReactNode } from 'react'
 import fotoArley from './assets/foto-arley.jpeg'
+import iconComproPay from './assets/apps/compropay.svg'
+import iconSpock from './assets/apps/spock.svg'
+import iconEntregaFlash from './assets/apps/americanas-entrega-flash.svg'
 
 const LINKS = {
   linkedin: 'https://www.linkedin.com/in/arley-santana-53546918b',
@@ -17,20 +20,23 @@ const PLAY_STORE_APPS = [
     description:
       'Pagamentos e rotinas de publicação/gerenciamento na Play Store. Atuação em novas features e manutenção.',
     tags: ['Kotlin', 'Android', 'Pagamentos', 'Play Store'],
+    iconSrc: iconComproPay,
   },
   {
-    name: 'Voe (B2W)',
+    name: 'Americanas Entrega Flash',
     url: 'https://play.google.com/store/apps/details?id=com.b2wdigital.voe&hl=pt_BR',
     description:
-      'Aplicativo Android (B2W). Contribuições em evolução do produto, qualidade e entrega contínua.',
-    tags: ['Android', 'Kotlin', 'Manutenção', 'Entrega'],
+      'Correções e evolução do app do entregador, com foco em novas corridas, gerenciamento de entregas e tempo real.',
+    tags: ['Android', 'Kotlin', 'Entrega', 'Tempo real'],
+    iconSrc: iconEntregaFlash,
   },
   {
-    name: 'Spock (B2W)',
+    name: 'Spock',
     url: 'https://play.google.com/store/apps/details?id=com.b2wdigital.spock&hl=pt_BR',
     description:
       'Aplicativo Android (B2W). Participação em correções e melhorias com foco em experiência do usuário.',
     tags: ['Android', 'Kotlin', 'Bugs', 'UX'],
+    iconSrc: iconSpock,
   },
 ]
 
@@ -397,7 +403,16 @@ export default function App() {
                   )}
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <p className="text-sm font-semibold text-white/90">{app.name}</p>
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={app.iconSrc}
+                        alt=""
+                        className="size-10 rounded-2xl border border-white/10 bg-white/5 object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <p className="text-sm font-semibold text-white/90">{app.name}</p>
+                    </div>
                     <span className="text-white/35 transition group-hover:text-white/55" aria-hidden>
                       ↗
                     </span>
