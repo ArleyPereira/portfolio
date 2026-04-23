@@ -158,7 +158,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <a
               href={LINKS.cv}
-              className="hidden rounded-xl bg-gradient-to-r from-[color:var(--color-accent)] to-[color:var(--color-accent-2)] px-4 py-2 text-sm font-semibold text-white shadow-[var(--shadow-soft)] transition hover:-translate-y-0.5 md:inline-flex"
+              className="hidden rounded-xl bg-gradient-to-r from-[color:var(--color-accent-green)] to-[color:var(--color-accent-green-2)] px-4 py-2 text-sm font-semibold text-white shadow-[var(--shadow-soft)] transition hover:-translate-y-0.5 md:inline-flex"
             >
               Baixar CV (PDF)
             </a>
