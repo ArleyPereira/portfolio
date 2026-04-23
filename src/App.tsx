@@ -18,24 +18,21 @@ const PLAY_STORE_APPS = [
     name: 'ComproPay',
     url: 'https://play.google.com/store/apps/details?id=br.com.compropay.app&hl=pt_BR',
     description:
-      'Pagamentos e rotinas de publicação/gerenciamento na Play Store. Atuação em novas features e manutenção.',
-    tags: ['Kotlin', 'Android', 'Pagamentos', 'Play Store'],
+      'App de pagamentos com fluxos de transações e rotinas do dia a dia. Atuei na evolução de funcionalidades, correções e no processo de releases/publicação na Play Store.',
     iconSrc: iconComproPay,
   },
   {
     name: 'Americanas Entrega Flash',
     url: 'https://play.google.com/store/apps/details?id=com.b2wdigital.voe&hl=pt_BR',
     description:
-      'Correções e evolução do app do entregador, com foco em novas corridas, gerenciamento de entregas e tempo real.',
-    tags: ['Android', 'Kotlin', 'Entrega', 'Tempo real'],
+      'App do entregador para receber corridas, aceitar/acompanhar entregas e seguir etapas até a conclusão. Contribuí com correções e melhorias focadas em performance e experiência em tempo real.',
     iconSrc: iconEntregaFlash,
   },
   {
     name: 'Spock',
     url: 'https://play.google.com/store/apps/details?id=com.b2wdigital.spock&hl=pt_BR',
     description:
-      'Aplicativo Android (B2W). Participação em correções e melhorias com foco em experiência do usuário.',
-    tags: ['Android', 'Kotlin', 'Bugs', 'UX'],
+      'Aplicativo Android de uso interno/operacional, com foco em rotinas e produtividade. Atuei em manutenção, correção de bugs e melhorias para elevar estabilidade e usabilidade.',
     iconSrc: iconSpock,
   },
 ]
@@ -422,11 +419,6 @@ export default function App() {
                     </span>
                   </div>
                   <p className="mt-3 text-sm text-white/65">{app.description}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {app.tags.map((t) => (
-                      <Pill key={t}>{t}</Pill>
-                    ))}
-                  </div>
                 </a>
               ))}
             </div>
