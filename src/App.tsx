@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import fotoArley from './assets/foto-arley.jpeg'
 import iconComproPay from './assets/apps/compropay.png'
 import iconSpock from './assets/apps/spock.png'
@@ -9,7 +9,7 @@ const LINKS = {
   github: 'https://github.com/ArleyPereira',
   youtube: 'https://www.youtube.com/@hellodevs',
   cv: `${import.meta.env.BASE_URL}ARLEY_PEREIRA_SANTANA.pdf`,
-  email: 'mailto:arley1995@ucl.br',
+  email: 'arley1995@ucl.br',
   whatsapp: 'https://wa.me/5527996375733',
 }
 
@@ -119,6 +119,37 @@ function SectionTitle({
 }
 
 export default function App() {
+  const [toast, setToast] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (!toast) return
+    const t = window.setTimeout(() => setToast(null), 2600)
+    return () => window.clearTimeout(t)
+  }, [toast])
+
+  async function copyEmail() {
+    const value = LINKS.email
+    try {
+      await navigator.clipboard.writeText(value)
+      setToast('Email copiado')
+    } catch {
+      try {
+        const el = document.createElement('textarea')
+        el.value = value
+        el.setAttribute('readonly', 'true')
+        el.style.position = 'fixed'
+        el.style.left = '-9999px'
+        document.body.appendChild(el)
+        el.select()
+        document.execCommand('copy')
+        document.body.removeChild(el)
+        setToast('Email copiado')
+      } catch {
+        setToast('Não foi possível copiar')
+      }
+    }
+  }
+
   return (
     <div className="min-h-dvh">
       <header className="sticky top-0 z-30 border-b border-white/5 bg-[color:var(--color-bg)]/75 backdrop-blur">
@@ -445,12 +476,13 @@ export default function App() {
             </div>
 
             <div className="mx-auto mt-4 grid max-w-3xl grid-cols-1 gap-3 md:grid-cols-2">
-              <a
-                href={LINKS.email}
+              <button
+                type="button"
+                onClick={copyEmail}
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/7"
               >
-                Email: arley1995@ucl.br
-              </a>
+                Email: {LINKS.email}
+              </button>
               <a
                 href={LINKS.whatsapp}
                 target="_blank"
@@ -467,6 +499,23 @@ export default function App() {
           </div>
         </section>
       </main>
+
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        className="pointer-events-none fixed bottom-5 left-1/2 z-50 -translate-x-1/2"
+      >
+        {toast ? (
+          <div className="pointer-events-none inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-[color:var(--color-surface)] px-4 py-3 text-sm text-white/85 shadow-[var(--shadow-soft)]">
+            <span
+              aria-hidden
+              className="size-2 rounded-full"
+              style={{ backgroundColor: '#00ff88' }}
+            />
+            {toast}
+          </div>
+        ) : null}
+      </div>
     </div>
   )
 }
