@@ -9,7 +9,7 @@ const LINKS = {
   github: 'https://github.com/ArleyPereira',
   youtube: 'https://www.youtube.com/@hellodevs',
   cv: `${import.meta.env.BASE_URL}ARLEY_PEREIRA_SANTANA.pdf`,
-  email: 'arley1995@ucl.br',
+  email: 'dev.arley.santana@gmail.com',
   whatsapp: 'https://wa.me/5527996375733',
 }
 
@@ -222,11 +222,12 @@ export default function App() {
                 Kotlin • Jetpack Compose • Clean Architecture • Multimódulos • KMP
               </p>
               <h1 className="mt-5 text-balance text-4xl font-semibold tracking-tight text-white md:text-6xl">
-                Desenvolvedor Android focado em apps escaláveis e experiência de usuário.
+                Desenvolvedor Android com foco em apps escaláveis e alta performance.
               </h1>
               <p className="mt-5 text-pretty text-base text-[color:var(--color-muted)] md:text-lg">
-                Atuo com Kotlin, Jetpack Compose e arquitetura limpa, colaborando com times ágeis
-                para entregar aplicações de alta qualidade e evolução contínua.
+                Kotlin, Jetpack Compose e arquitetura multi-módulos. Integração de APIs, Firebase e
+                bibliotecas como Hilt e Coroutines para entregar produtos com qualidade técnica e
+                ótima experiência do usuário.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -334,7 +335,6 @@ export default function App() {
                     <p className="text-sm font-semibold text-white/90">ComproPay</p>
                     <p className="mt-1 text-xs text-white/55">Desenvolvedor Android • 01/2021 — 12/2021</p>
                   </div>
-                  <Pill>Pagamentos</Pill>
                 </div>
 
                 <div className="mt-5 space-y-3 text-sm text-white/70">
