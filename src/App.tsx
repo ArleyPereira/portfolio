@@ -312,7 +312,7 @@ export default function App() {
                     <p className="text-sm font-semibold text-white/90">Americanas</p>
                     <p className="mt-1 text-xs text-white/55">Desenvolvedor Android • 01/2022 — Atual</p>
                   </div>
-                  <Pill>Vitória, ES</Pill>
+                  <Pill>Delivery</Pill>
                 </div>
 
                 <div className="mt-5 space-y-3 text-sm text-white/70">
@@ -331,9 +331,7 @@ export default function App() {
                     </li>
                   </ul>
 
-                  <p className="mt-4 font-semibold text-white/85">
-                    App do Entregador <span className="text-white/55">— com.b2wdigital.voe (Deliveryman)</span>
-                  </p>
+                  <p className="mt-4 font-semibold text-white/85">App do Entregador</p>
                   <ul className="list-disc space-y-2 pl-5 text-white/70 marker:text-[color:var(--color-accent-green)]">
                     <li>
                       Desenvolvimento de features do fluxo do entregador (autenticação/onboarding,
@@ -385,6 +383,7 @@ export default function App() {
                     <p className="text-sm font-semibold text-white/90">ComproPay</p>
                     <p className="mt-1 text-xs text-white/55">Desenvolvedor Android • 01/2021 — 12/2021</p>
                   </div>
+                  <Pill>Pagamentos</Pill>
                 </div>
 
                 <div className="mt-5 space-y-3 text-sm text-white/70">
