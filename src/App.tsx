@@ -325,8 +325,9 @@ export default function App() {
                       colaborando com o time no planejamento técnico e organização do backlog.
                     </li>
                     <li>
-                      Stack Android nativa com Kotlin, Jetpack (Navigation/ViewModel/Lifecycle),
-                      consumo de APIs REST (Retrofit/OkHttp) e monitoramento com Firebase Crashlytics.
+                      Stack Android nativa com Kotlin, arquitetura com Jetpack
+                      (Navigation/ViewModel/Lifecycle), consumo de APIs REST
+                      (Retrofit/OkHttp) e monitoramento com Firebase Crashlytics.
                     </li>
                   </ul>
 
@@ -341,6 +342,38 @@ export default function App() {
                     <li>
                       Arquitetura multi-módulos e UI com Jetpack Compose + ViewBinding/DataBinding,
                       navegação com Jetpack Navigation (SafeArgs).
+                    </li>
+                    <li>
+                      Stack: Koin (DI), Room, Retrofit/OkHttp, Kotlin Serialization, Firebase
+                      (Analytics/Messaging/Crashlytics/Remote Config).
+                    </li>
+                    <li>
+                      Capacidades do app: Maps/Location, câmera e leitura de códigos (ML
+                      Kit/Barcode), além de animações com Lottie.
+                    </li>
+                  </ul>
+
+                  <p className="mt-4 font-semibold text-white/85">
+                    App de Abastecimento (Motoristas) <span className="text-white/55">— com.b2wdigital.spock (Atual)</span>
+                  </p>
+                  <ul className="list-disc space-y-2 pl-5 text-white/70 marker:text-[color:var(--color-accent-green)]">
+                    <li>
+                      Desenvolvimento e manutenção de app operacional para motoristas
+                      (rotina de abastecimento/logística), com foco em confiabilidade,
+                      performance e evolução de features.
+                    </li>
+                    <li>
+                      UI com Jetpack Compose + ViewBinding e arquitetura
+                      modular (core/data/domain/design), com tarefas assíncronas usando
+                      WorkManager.
+                    </li>
+                    <li>
+                      Stack: Hilt (DI), Room, Retrofit/OkHttp, Coroutines, Firebase
+                      (Crashlytics/Messaging/Remote Config/Performance).
+                    </li>
+                    <li>
+                      Recursos: Maps/Location, CameraX, scanner (ZXing), captura de
+                      assinatura e bibliotecas de UX/analytics (ex.: UXCam/Smartlook).
                     </li>
                   </ul>
                 </div>
@@ -358,8 +391,8 @@ export default function App() {
                   <ul className="list-disc space-y-2 pl-5 text-white/70 marker:text-[color:var(--color-accent-green)]">
                     <li>
                       Correção de bugs e desenvolvimento de features de pagamentos,
-                      cadastro/recuperação, perfil e fluxos do app, atuando em arquitetura multi-módulos
-                      (core/data/domain/features).
+                      cadastro/recuperação, perfil e fluxos do app, atuando em arquitetura
+                      multi-módulos (core/data/domain/features).
                     </li>
                     <li>
                       Implementação de UI híbrida (Jetpack Compose + ViewBinding/XML) e navegação com
@@ -371,7 +404,7 @@ export default function App() {
                     </li>
                     <li>
                       Recursos do dispositivo/SDKs: Maps/Location, leitura de códigos (ZXing/ML Kit),
-                      biometria, animações (Lottie) e DI com Hilt (com módulos usando Koin).
+                      biometria, animações (Lottie) e DI com Hilt (e módulos usando Koin).
                     </li>
                   </ul>
                 </div>
