@@ -316,16 +316,33 @@ export default function App() {
                 </div>
 
                 <div className="mt-5 space-y-3 text-sm text-white/70">
-                  <p className="font-semibold text-white/85">App do Cliente</p>
-                  <p>
-                    Correção de bugs, desenvolvimento de novas funcionalidades e colaboração com o
-                    time no planejamento técnico, contribuindo para evolução e escalabilidade.
+                  <p className="font-semibold text-white/85">
+                    Americanas Delivery (Cliente final) <span className="text-white/55">— descontinuado</span>
                   </p>
-                  <p className="font-semibold text-white/85">App do Entregador</p>
-                  <p>
-                    Correções e features para entregadores, incluindo exibição de novas corridas,
-                    gerenciamento de entregas e acompanhamento em tempo real.
+                  <ul className="list-disc space-y-2 pl-5 text-white/70 marker:text-[color:var(--color-accent-green)]">
+                    <li>
+                      Correção de bugs e desenvolvimento de funcionalidades para o cliente,
+                      colaborando com o time no planejamento técnico e organização do backlog.
+                    </li>
+                    <li>
+                      Stack Android nativa com Kotlin, Jetpack (Navigation/ViewModel/Lifecycle),
+                      consumo de APIs REST (Retrofit/OkHttp) e monitoramento com Firebase Crashlytics.
+                    </li>
+                  </ul>
+
+                  <p className="mt-4 font-semibold text-white/85">
+                    App do Entregador <span className="text-white/55">— com.b2wdigital.voe (Deliveryman)</span>
                   </p>
+                  <ul className="list-disc space-y-2 pl-5 text-white/70 marker:text-[color:var(--color-accent-green)]">
+                    <li>
+                      Desenvolvimento de features do fluxo do entregador (autenticação/onboarding,
+                      jornadas da corrida/entrega e menus), com evolução contínua e correções de bugs.
+                    </li>
+                    <li>
+                      Arquitetura multi-módulos e UI com Jetpack Compose + ViewBinding/DataBinding,
+                      navegação com Jetpack Navigation (SafeArgs).
+                    </li>
+                  </ul>
                 </div>
               </div>
 
@@ -338,15 +355,25 @@ export default function App() {
                 </div>
 
                 <div className="mt-5 space-y-3 text-sm text-white/70">
-                  <p>
-                    App de pagamentos com fluxos de transações (ex.: cobranças/recebimentos) e rotinas
-                    operacionais do usuário. Atuei na manutenção e evolução de funcionalidades,
-                    correções de bugs e melhorias de estabilidade/performance.
-                  </p>
-                  <p>
-                    Também fui responsável pelo ciclo de releases, incluindo geração de builds,
-                    versionamento e publicação/gerenciamento na Play Store.
-                  </p>
+                  <ul className="list-disc space-y-2 pl-5 text-white/70 marker:text-[color:var(--color-accent-green)]">
+                    <li>
+                      Correção de bugs e desenvolvimento de features de pagamentos,
+                      cadastro/recuperação, perfil e fluxos do app, atuando em arquitetura multi-módulos
+                      (core/data/domain/features).
+                    </li>
+                    <li>
+                      Implementação de UI híbrida (Jetpack Compose + ViewBinding/XML) e navegação com
+                      Jetpack Navigation (SafeArgs).
+                    </li>
+                    <li>
+                      Integrações e infraestrutura mobile: Retrofit/OkHttp, persistência com Room e
+                      DataStore, Firebase (Crashlytics/Messaging/Analytics) e OneSignal.
+                    </li>
+                    <li>
+                      Recursos do dispositivo/SDKs: Maps/Location, leitura de códigos (ZXing/ML Kit),
+                      biometria, animações (Lottie) e DI com Hilt (com módulos usando Koin).
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
