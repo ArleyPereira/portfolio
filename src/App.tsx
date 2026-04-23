@@ -21,6 +21,8 @@ const PLAY_STORE_APPS = [
       'Pagamentos e rotinas de publicação/gerenciamento na Play Store. Atuação em novas features e manutenção.',
     tags: ['Kotlin', 'Android', 'Pagamentos', 'Play Store'],
     iconSrc: iconComproPay,
+    iconFit: 'cover',
+    iconBg: 'transparent',
   },
   {
     name: 'Americanas Entrega Flash',
@@ -29,6 +31,9 @@ const PLAY_STORE_APPS = [
       'Correções e evolução do app do entregador, com foco em novas corridas, gerenciamento de entregas e tempo real.',
     tags: ['Android', 'Kotlin', 'Entrega', 'Tempo real'],
     iconSrc: iconEntregaFlash,
+    iconFit: 'contain',
+    iconBg: '#F80032',
+    iconPad: 6,
   },
   {
     name: 'Spock',
@@ -37,6 +42,8 @@ const PLAY_STORE_APPS = [
       'Aplicativo Android (B2W). Participação em correções e melhorias com foco em experiência do usuário.',
     tags: ['Android', 'Kotlin', 'Bugs', 'UX'],
     iconSrc: iconSpock,
+    iconFit: 'cover',
+    iconBg: 'transparent',
   },
 ]
 
@@ -277,7 +284,7 @@ export default function App() {
             />
 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 transition hover:-translate-y-0.5 hover:border-[color:var(--color-accent-green)] hover:shadow-[var(--shadow-soft)]">
+              <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]">
                 <div className="flex items-start justify-between gap-6">
                   <div>
                     <p className="text-sm font-semibold text-white/90">Americanas Delivery</p>
@@ -300,7 +307,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 transition hover:-translate-y-0.5 hover:border-[color:var(--color-accent-green)] hover:shadow-[var(--shadow-soft)]">
+              <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]">
                 <div className="flex items-start justify-between gap-6">
                   <div>
                     <p className="text-sm font-semibold text-white/90">ComproPay</p>
@@ -366,7 +373,7 @@ export default function App() {
               ].map((g) => (
                 <div
                   key={g.title}
-                  className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6"
+                  className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]"
                 >
                   <p className="text-sm font-semibold text-white/90">{g.title}</p>
                   <ul className="mt-4 space-y-2 text-sm text-white/70">
@@ -406,13 +413,20 @@ export default function App() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-center gap-3">
-                      <div className="size-10 overflow-hidden rounded-xl bg-white/5">
+                      <div
+                        className="size-10 overflow-hidden rounded-2xl"
+                        style={{ backgroundColor: app.iconBg ?? 'transparent' }}
+                      >
                         <img
                           src={app.iconSrc}
                           alt=""
-                          className="size-10 object-cover"
+                          className={classNames(
+                            'size-10',
+                            app.iconFit === 'contain' ? 'object-contain' : 'object-cover',
+                          )}
                           loading="lazy"
                           decoding="async"
+                          style={{ padding: app.iconPad ?? 0 }}
                         />
                       </div>
                       <p className="text-sm font-semibold text-white/90">{app.name}</p>
@@ -438,7 +452,6 @@ export default function App() {
             <SectionTitle
               eyebrow="CONTATO"
               title="Vamos conversar"
-              subtitle="Para processos seletivos, freelas ou parcerias."
             />
 
             <div className="mx-auto grid max-w-3xl grid-cols-1 gap-3 md:grid-cols-3">
@@ -471,7 +484,7 @@ export default function App() {
             </div>
 
             <p className="mt-10 text-center text-xs text-white/45">
-              © {new Date().getFullYear()} Arley Pereira Santana • Feito com React + Vite
+              © {new Date().getFullYear()} Arley Pereira Santana
             </p>
           </div>
         </section>
