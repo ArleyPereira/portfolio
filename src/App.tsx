@@ -94,6 +94,27 @@ function Pill({ children }: { children: React.ReactNode }) {
   )
 }
 
+function ExperienceBlock({
+  title,
+  bullets,
+  className,
+}: {
+  title: ReactNode
+  bullets: string[]
+  className?: string
+}) {
+  return (
+    <div className={className}>
+      <p className="font-semibold text-white/85">{title}</p>
+      <ul className="mt-2 list-disc space-y-2 pl-5 text-white/70 marker:text-[color:var(--color-accent-green)]">
+        {bullets.map((b) => (
+          <li key={b}>{b}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
 function SectionTitle({
   eyebrow,
   title,
@@ -305,7 +326,7 @@ export default function App() {
               subtitle="Contribuições focadas em qualidade, evolução contínua e entregas com impacto no usuário final."
             />
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
               <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]">
                 <div className="flex items-start justify-between gap-6">
                   <div>
@@ -316,64 +337,39 @@ export default function App() {
                 </div>
 
                 <div className="mt-5 space-y-3 text-sm text-white/70">
-                  <p className="font-semibold text-white/85">
-                    Americanas Delivery (Cliente final) <span className="text-white/55">— descontinuado</span>
-                  </p>
-                  <ul className="list-disc space-y-2 pl-5 text-white/70 marker:text-[color:var(--color-accent-green)]">
-                    <li>
-                      Correção de bugs e desenvolvimento de funcionalidades para o cliente,
-                      colaborando com o time no planejamento técnico e organização do backlog.
-                    </li>
-                    <li>
-                      Stack Android nativa com Kotlin, arquitetura com Jetpack
-                      (Navigation/ViewModel/Lifecycle), consumo de APIs REST
-                      (Retrofit/OkHttp) e monitoramento com Firebase Crashlytics.
-                    </li>
-                  </ul>
+                  <ExperienceBlock
+                    title={
+                      <>
+                        Americanas Delivery (Cliente final) <span className="text-white/55">— descontinuado</span>
+                      </>
+                    }
+                    bullets={[
+                      'Correção de bugs e desenvolvimento de funcionalidades para o cliente, colaborando com o time no planejamento técnico e organização do backlog.',
+                      'Stack Android nativa com Kotlin, arquitetura com Jetpack (Navigation/ViewModel/Lifecycle), consumo de APIs REST (Retrofit/OkHttp) e monitoramento com Firebase Crashlytics.',
+                    ]}
+                  />
 
-                  <p className="mt-4 font-semibold text-white/85">App do Entregador</p>
-                  <ul className="list-disc space-y-2 pl-5 text-white/70 marker:text-[color:var(--color-accent-green)]">
-                    <li>
-                      Desenvolvimento de features do fluxo do entregador (autenticação/onboarding,
-                      jornadas da corrida/entrega e menus), com evolução contínua e correções de bugs.
-                    </li>
-                    <li>
-                      Arquitetura multi-módulos e UI com Jetpack Compose + ViewBinding/DataBinding,
-                      navegação com Jetpack Navigation (SafeArgs).
-                    </li>
-                    <li>
-                      Stack: Koin (DI), Room, Retrofit/OkHttp, Kotlin Serialization, Firebase
-                      (Analytics/Messaging/Crashlytics/Remote Config).
-                    </li>
-                    <li>
-                      Capacidades do app: Maps/Location, câmera e leitura de códigos (ML
-                      Kit/Barcode), além de animações com Lottie.
-                    </li>
-                  </ul>
+                  <ExperienceBlock
+                    className="mt-4"
+                    title="App do Entregador"
+                    bullets={[
+                      'Desenvolvimento de features do fluxo do entregador (autenticação/onboarding, jornadas da corrida/entrega e menus), com evolução contínua e correções de bugs.',
+                      'Arquitetura multi-módulos e UI com Jetpack Compose + ViewBinding/DataBinding, navegação com Jetpack Navigation (SafeArgs).',
+                      'Stack: Koin (DI), Room, Retrofit/OkHttp, Kotlin Serialization, Firebase (Analytics/Messaging/Crashlytics/Remote Config).',
+                      'Capacidades do app: Maps/Location, câmera e leitura de códigos (ML Kit/Barcode), além de animações com Lottie.',
+                    ]}
+                  />
 
-                  <p className="mt-4 font-semibold text-white/85">
-                    App de Abastecimento (Motoristas)
-                  </p>
-                  <ul className="list-disc space-y-2 pl-5 text-white/70 marker:text-[color:var(--color-accent-green)]">
-                    <li>
-                      Desenvolvimento e manutenção de app operacional para motoristas
-                      (rotina de abastecimento/logística), com foco em confiabilidade,
-                      performance e evolução de features.
-                    </li>
-                    <li>
-                      UI com Jetpack Compose + ViewBinding e arquitetura
-                      modular (core/data/domain/design), com tarefas assíncronas usando
-                      WorkManager.
-                    </li>
-                    <li>
-                      Stack: Hilt (DI), Room, Retrofit/OkHttp, Coroutines, Firebase
-                      (Crashlytics/Messaging/Remote Config/Performance).
-                    </li>
-                    <li>
-                      Recursos: Maps/Location, CameraX, scanner (ZXing), captura de
-                      assinatura e bibliotecas de UX/analytics (ex.: UXCam/Smartlook).
-                    </li>
-                  </ul>
+                  <ExperienceBlock
+                    className="mt-4"
+                    title="App de Abastecimento (Motoristas)"
+                    bullets={[
+                      'Desenvolvimento e manutenção de app operacional para motoristas (rotina de abastecimento/logística), com foco em confiabilidade, performance e evolução de features.',
+                      'UI com Jetpack Compose + ViewBinding e arquitetura modular (core/data/domain/design), com tarefas assíncronas usando WorkManager.',
+                      'Stack: Hilt (DI), Room, Retrofit/OkHttp, Coroutines, Firebase (Crashlytics/Messaging/Remote Config/Performance).',
+                      'Recursos: Maps/Location, CameraX, scanner (ZXing), captura de assinatura e bibliotecas de UX/analytics (ex.: UXCam/Smartlook).',
+                    ]}
+                  />
                 </div>
               </div>
 
@@ -387,25 +383,37 @@ export default function App() {
                 </div>
 
                 <div className="mt-5 space-y-3 text-sm text-white/70">
-                  <ul className="list-disc space-y-2 pl-5 text-white/70 marker:text-[color:var(--color-accent-green)]">
-                    <li>
-                      Correção de bugs e desenvolvimento de features de pagamentos,
-                      cadastro/recuperação, perfil e fluxos do app, atuando em arquitetura
-                      multi-módulos (core/data/domain/features).
-                    </li>
-                    <li>
-                      Implementação de UI híbrida (Jetpack Compose + ViewBinding/XML) e navegação com
-                      Jetpack Navigation (SafeArgs).
-                    </li>
-                    <li>
-                      Integrações e infraestrutura mobile: Retrofit/OkHttp, persistência com Room e
-                      DataStore, Firebase (Crashlytics/Messaging/Analytics) e OneSignal.
-                    </li>
-                    <li>
-                      Recursos do dispositivo/SDKs: Maps/Location, leitura de códigos (ZXing/ML Kit),
-                      biometria, animações (Lottie) e DI com Hilt (e módulos usando Koin).
-                    </li>
-                  </ul>
+                  <ExperienceBlock
+                    title="Destaques"
+                    bullets={[
+                      'Correção de bugs e desenvolvimento de features de pagamentos, cadastro/recuperação, perfil e fluxos do app, atuando em arquitetura multi-módulos (core/data/domain/features).',
+                      'Implementação de UI híbrida (Jetpack Compose + ViewBinding/XML) e navegação com Jetpack Navigation (SafeArgs).',
+                      'Integrações e infraestrutura mobile: Retrofit/OkHttp, persistência com Room e DataStore, Firebase (Crashlytics/Messaging/Analytics) e OneSignal.',
+                      'Recursos do dispositivo/SDKs: Maps/Location, leitura de códigos (ZXing/ML Kit), biometria, animações (Lottie) e DI com Hilt (e módulos usando Koin).',
+                    ]}
+                  />
+                </div>
+              </div>
+
+              <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]">
+                <div className="flex items-start justify-between gap-6">
+                  <div>
+                    <p className="text-sm font-semibold text-white/90">Vitória Soft do Brasil</p>
+                    <p className="mt-1 text-xs text-white/55">Suporte técnico • 05/2019 — 06/2021</p>
+                  </div>
+                  <Pill>Suporte</Pill>
+                </div>
+
+                <div className="mt-5 space-y-3 text-sm text-white/70">
+                  <ExperienceBlock
+                    title="Destaques"
+                    bullets={[
+                      'Atendimento e suporte técnico a clientes em sistemas para farmácias de manipulação, atuando na resolução de incidentes e dúvidas operacionais do dia a dia.',
+                      'Suporte a rotinas críticas como checkout/PDV, emissão de notas fiscais e demais fluxos de venda, garantindo continuidade da operação.',
+                      'Diagnóstico de falhas, análise de causa e orientação de correções/configurações, com registro e acompanhamento até a normalização.',
+                      'Apoio a implantações/atualizações, configuração de ambiente e treinamento rápido de usuários, com foco em agilidade e boa experiência do cliente.',
+                    ]}
+                  />
                 </div>
               </div>
             </div>
@@ -428,6 +436,7 @@ export default function App() {
                     'Kotlin / Java',
                     'Jetpack Compose / XML',
                     'Jetpack Components (Navigation, Room, Lifecycle, LiveData, ViewModel)',
+                    'Testes unitários e instrumentados',
                   ],
                 },
                 {
@@ -445,6 +454,7 @@ export default function App() {
                     'Firebase (Auth, Database, Storage, Crashlytics, Messaging)',
                     'Publicação/versões na Play Store',
                     'Compose Multiplatform (KMP, Koin, Ktor, Voyager)',
+                    'CI / CD',
                   ],
                 },
                 {
