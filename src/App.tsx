@@ -58,14 +58,24 @@ function IconGitHub({ className }: { className?: string }) {
   )
 }
 
+function IconYouTube({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+      <path d="M23.5 6.2c-.3-1.1-1.1-1.9-2.2-2.2C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.3.5C1.6 4.3.8 5.1.5 6.2 0 8.1 0 12 0 12s0 3.9.5 5.8c.3 1.1 1.1 1.9 2.2 2.2 1.8.5 9.3.5 9.3.5s7.5 0 9.3-.5c1.1-.3 1.9-1.1 2.2-2.2.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.5V8.5L15.8 12 9.5 15.5z" />
+    </svg>
+  )
+}
+
 function ExternalLink({
   href,
   children,
   className,
+  icon,
 }: {
   href: string
   children: ReactNode
   className?: string
+  icon?: ReactNode
 }) {
   return (
     <a
@@ -79,6 +89,7 @@ function ExternalLink({
         className,
       )}
     >
+      {icon ? <span className="text-white">{icon}</span> : null}
       {children}
       <span aria-hidden className="text-white/35">
         ↗
@@ -213,27 +224,7 @@ export default function App() {
               href={LINKS.cv}
               className="hidden rounded-xl bg-gradient-to-r from-[color:var(--color-accent-green)] to-[color:var(--color-accent-green-2)] px-4 py-2 text-sm font-semibold text-black shadow-[var(--shadow-soft)] transition hover:-translate-y-0.5 md:inline-flex"
             >
-              Baixar CV (PDF)
-            </a>
-            <a
-              href={LINKS.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/80 hover:bg-white/7"
-              aria-label="LinkedIn"
-              title="LinkedIn"
-            >
-              <IconLinkedIn className="size-5" />
-            </a>
-            <a
-              href={LINKS.github}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/80 hover:bg-white/7"
-              aria-label="GitHub"
-              title="GitHub"
-            >
-              <IconGitHub className="size-5" />
+              Baixar currículo (PDF)
             </a>
           </div>
         </div>
@@ -252,14 +243,20 @@ export default function App() {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <ExternalLink href={LINKS.linkedin}>LinkedIn</ExternalLink>
-              <ExternalLink href={LINKS.github}>GitHub</ExternalLink>
-              <ExternalLink href={LINKS.youtube}>YouTube</ExternalLink>
+              <ExternalLink href={LINKS.linkedin} icon={<IconLinkedIn className="size-4" />}>
+                LinkedIn
+              </ExternalLink>
+              <ExternalLink href={LINKS.github} icon={<IconGitHub className="size-4" />}>
+                GitHub
+              </ExternalLink>
+              <ExternalLink href={LINKS.youtube} icon={<IconYouTube className="size-4" />}>
+                YouTube
+              </ExternalLink>
               <a
                 href={LINKS.cv}
                 className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/7 md:hidden"
               >
-                Baixar CV (PDF)
+                Baixar currículo (PDF)
               </a>
             </div>
           </div>
@@ -480,6 +477,12 @@ export default function App() {
 
         <section id="projeto-pessoal" className="border-t border-white/5">
           <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
+            <SectionTitle
+              eyebrow="PROJETO PESSOAL"
+              title="Projeto pessoal"
+              subtitle="Valorizze — finanças pessoais com web e mobile (Compose Multiplatform)."
+            />
+
             <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-[#0b1220] via-[#0b0f16] to-[#0b1220] p-6 shadow-[var(--shadow-soft)] md:p-10">
               <div className="pointer-events-none absolute -left-24 -top-24 size-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(0,255,136,0.22),transparent_60%)]" />
               <div className="pointer-events-none absolute -right-28 top-10 size-96 rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.22),transparent_62%)]" />
@@ -594,13 +597,25 @@ export default function App() {
             />
 
             <div className="mx-auto grid max-w-3xl grid-cols-1 gap-3 md:grid-cols-3">
-              <ExternalLink href={LINKS.linkedin} className="justify-center">
+              <ExternalLink
+                href={LINKS.linkedin}
+                className="justify-center"
+                icon={<IconLinkedIn className="size-4" />}
+              >
                 LinkedIn
               </ExternalLink>
-              <ExternalLink href={LINKS.github} className="justify-center">
+              <ExternalLink
+                href={LINKS.github}
+                className="justify-center"
+                icon={<IconGitHub className="size-4" />}
+              >
                 GitHub
               </ExternalLink>
-              <ExternalLink href={LINKS.youtube} className="justify-center">
+              <ExternalLink
+                href={LINKS.youtube}
+                className="justify-center"
+                icon={<IconYouTube className="size-4" />}
+              >
                 YouTube
               </ExternalLink>
             </div>
