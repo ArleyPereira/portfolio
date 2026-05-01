@@ -11,6 +11,7 @@ const LINKS = {
   cv: `${import.meta.env.BASE_URL}ARLEY_PEREIRA_SANTANA.pdf`,
   email: 'dev.arley.santana@gmail.com',
   whatsapp: 'https://wa.me/5527996375733',
+  valorizze: 'https://valorizze.app/',
 }
 
 const PLAY_STORE_APPS = [
@@ -198,6 +199,9 @@ export default function App() {
             </a>
             <a className="hover:text-white" href="#projetos">
               Projetos
+            </a>
+            <a className="hover:text-white" href="#projeto-pessoal">
+              Projeto pessoal
             </a>
             <a className="hover:text-white" href="#contato">
               Contato
@@ -527,6 +531,44 @@ export default function App() {
                   <p className="mt-3 text-sm text-white/65">{app.description}</p>
                 </a>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="projeto-pessoal" className="border-t border-white/5">
+          <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
+            <SectionTitle
+              eyebrow="PROJETO PESSOAL"
+              title="Valorizze"
+              subtitle="Sistema para controle de finanças pessoais, com web e apps Android/iOS usando Compose Multiplatform."
+            />
+
+            <div className="mx-auto max-w-3xl rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-soft)] transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]">
+              <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                <div>
+                  <p className="text-sm font-semibold text-white/90">Finanças pessoais</p>
+                  <p className="mt-2 text-sm text-white/65">
+                    Organização de gastos e receitas, acompanhamento de metas e rotinas do dia a dia
+                    para manter o controle financeiro com uma experiência consistente entre web e mobile.
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <Pill>Web</Pill>
+                    <Pill>Android</Pill>
+                    <Pill>iOS</Pill>
+                    <Pill>Compose Multiplatform</Pill>
+                  </div>
+                  <p className="mt-4 text-xs text-white/45">
+                    Apps ainda não estão disponíveis para download — em breve nas lojas.
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-2 md:items-end">
+                  <ExternalLink href={LINKS.valorizze} className="justify-center md:justify-end">
+                    Abrir site
+                  </ExternalLink>
+                  <p className="text-xs text-white/45 md:text-right">valorizze.app</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
