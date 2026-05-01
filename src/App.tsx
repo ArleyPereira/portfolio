@@ -241,83 +241,26 @@ export default function App() {
 
       <main id="top">
         <section className="relative overflow-hidden">
-          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 py-16 md:grid-cols-2 md:gap-12 md:px-6 md:py-24">
-            <div className="self-center">
-              <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">
-                Kotlin • Jetpack Compose • Clean Architecture • Multimódulos • KMP
-              </p>
-              <h1 className="mt-5 text-balance text-4xl font-semibold tracking-tight text-white md:text-6xl">
-                Desenvolvedor Android com foco em apps escaláveis e alta performance.
-              </h1>
-              <p className="mt-5 text-pretty text-base text-[color:var(--color-muted)] md:text-lg">
-                Kotlin, Jetpack Compose e arquitetura multi-módulos. Integração de APIs, Firebase e
-                bibliotecas como Hilt e Coroutines para entregar produtos com qualidade técnica e
-                ótima experiência do usuário.
-              </p>
+          <div className="mx-auto max-w-4xl px-4 py-16 text-center md:px-6 md:py-24">
+            <h1 className="text-balance text-4xl font-semibold tracking-tight text-white md:text-6xl">
+              Desenvolvedor Android com foco em apps escaláveis e alta performance.
+            </h1>
+            <p className="mt-5 text-pretty text-base text-[color:var(--color-muted)] md:text-lg">
+              Kotlin, Jetpack Compose e arquitetura multi-módulos. Integração de APIs, Firebase e
+              bibliotecas como Hilt e Coroutines para entregar produtos com qualidade técnica e ótima
+              experiência do usuário.
+            </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <ExternalLink href={LINKS.linkedin}>LinkedIn</ExternalLink>
-                <ExternalLink href={LINKS.github}>GitHub</ExternalLink>
-                <ExternalLink href={LINKS.youtube}>YouTube</ExternalLink>
-                <a
-                  href={LINKS.cv}
-                  className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/7 md:hidden"
-                >
-                  Baixar CV (PDF)
-                </a>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-soft)]">
-                <div className="flex items-start justify-between gap-6">
-                  <div>
-                    <p className="text-sm font-semibold text-white/90">Resumo</p>
-                  </div>
-                  <span className="inline-flex items-center gap-2 text-xs font-medium text-white/70 whitespace-nowrap">
-                    <span
-                      aria-hidden
-                      className="size-2 rounded-full"
-                      style={{ backgroundColor: '#00ff88' }}
-                    />
-                    Disponível para oportunidades
-                  </span>
-                </div>
-
-                <div className="mt-6 grid grid-cols-2 gap-3">
-                  <div className="rounded-2xl border border-white/10 bg-white/3 p-4">
-                    <p className="text-xs text-white/55">Empresa atual</p>
-                    <p className="mt-1 text-sm font-semibold text-white/90">
-                      Americanas
-                    </p>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/3 p-4">
-                    <p className="text-xs text-white/55">Desde</p>
-                    <p className="mt-1 text-sm font-semibold text-white/90">01/2022</p>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/3 p-4">
-                    <p className="text-xs text-white/55">Experiência</p>
-                    <p className="mt-1 text-sm font-semibold text-white/90">Android (Kotlin / Java)</p>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/3 p-4">
-                    <p className="text-xs text-white/55">Arquitetura</p>
-                    <p className="mt-1 text-sm font-semibold text-white/90">Clean + Multimódulos</p>
-                  </div>
-                </div>
-
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {[
-                    'Jetpack Compose',
-                    'Navigation/Room/Lifecycle',
-                    'Retrofit/Ktor/OkHttp',
-                    'Hilt/Koin',
-                    'Firebase (Crashlytics, Auth, etc.)',
-                    'Play Store releases',
-                  ].map((t) => (
-                    <Pill key={t}>{t}</Pill>
-                  ))}
-                </div>
-              </div>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <ExternalLink href={LINKS.linkedin}>LinkedIn</ExternalLink>
+              <ExternalLink href={LINKS.github}>GitHub</ExternalLink>
+              <ExternalLink href={LINKS.youtube}>YouTube</ExternalLink>
+              <a
+                href={LINKS.cv}
+                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/7 md:hidden"
+              >
+                Baixar CV (PDF)
+              </a>
             </div>
           </div>
         </section>
@@ -537,36 +480,106 @@ export default function App() {
 
         <section id="projeto-pessoal" className="border-t border-white/5">
           <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
-            <SectionTitle
-              eyebrow="PROJETO PESSOAL"
-              title="Valorizze"
-              subtitle="Sistema para controle de finanças pessoais, com web e apps Android/iOS usando Compose Multiplatform."
-            />
+            <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-[#0b1220] via-[#0b0f16] to-[#0b1220] p-6 shadow-[var(--shadow-soft)] md:p-10">
+              <div className="pointer-events-none absolute -left-24 -top-24 size-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(0,255,136,0.22),transparent_60%)]" />
+              <div className="pointer-events-none absolute -right-28 top-10 size-96 rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.22),transparent_62%)]" />
 
-            <div className="mx-auto max-w-3xl rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-soft)] transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]">
-              <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+              <div className="relative grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
                 <div>
-                  <p className="text-sm font-semibold text-white/90">Finanças pessoais</p>
-                  <p className="mt-2 text-sm text-white/65">
-                    Organização de gastos e receitas, acompanhamento de metas e rotinas do dia a dia
-                    para manter o controle financeiro com uma experiência consistente entre web e mobile.
+                  <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-white/75">
+                    <span aria-hidden className="text-[color:var(--color-accent-green)]">
+                      ★
+                    </span>
+                    Experiência premium no web e mobile
                   </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
+
+                  <h2 className="mt-6 text-balance text-4xl font-semibold tracking-tight text-white md:text-5xl">
+                    Seu dinheiro sob{' '}
+                    <span className="bg-gradient-to-r from-sky-300 via-cyan-300 to-[color:var(--color-accent-green)] bg-clip-text text-transparent">
+                      controle total
+                    </span>
+                  </h2>
+
+                  <p className="mt-5 text-pretty text-sm text-white/65 md:text-base">
+                    O Valorizze centraliza contas, cartões e transações em uma interface clara, rápida e
+                    elegante para você decidir melhor todo dia.
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
                     <Pill>Web</Pill>
                     <Pill>Android</Pill>
                     <Pill>iOS</Pill>
                     <Pill>Compose Multiplatform</Pill>
                   </div>
-                  <p className="mt-4 text-xs text-white/45">
-                    Apps ainda não estão disponíveis para download — em breve nas lojas.
-                  </p>
+
+                  <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                    <a
+                      href={LINKS.valorizze}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={classNames(
+                        'inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-2xl',
+                        'bg-white px-6 py-3 text-sm font-semibold text-black shadow-[0_18px_55px_rgba(0,0,0,0.45)]',
+                        'transition hover:-translate-y-0.5 hover:shadow-[0_22px_70px_rgba(0,0,0,0.55)]',
+                        'focus-visible:outline-none',
+                        'sm:w-auto',
+                      )}
+                    >
+                      Abrir site
+                      <span aria-hidden className="text-black/45">
+                        ↗
+                      </span>
+                    </a>
+
+                    <div className="inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-xs text-white/55 sm:w-auto">
+                      Apps nas lojas: <span className="font-semibold text-white/75">em breve</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="flex flex-col gap-2 md:items-end">
-                  <ExternalLink href={LINKS.valorizze} className="justify-center md:justify-end">
-                    Abrir site
-                  </ExternalLink>
-                  <p className="text-xs text-white/45 md:text-right">valorizze.app</p>
+                <div className="relative">
+                  <div className="rounded-[22px] border border-white/10 bg-white/3 p-4 backdrop-blur">
+                    <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-sky-500/15 via-white/5 to-transparent p-5">
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <p className="text-[11px] font-semibold tracking-[0.18em] text-white/55">
+                            VISÃO GERAL DO MÊS
+                          </p>
+                          <p className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">
+                            R$ 19.450,90
+                          </p>
+                        </div>
+                        <span className="grid size-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/70">
+                          ↗
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="mt-4 grid grid-cols-2 gap-3">
+                      <div className="rounded-2xl border border-emerald-400/15 bg-emerald-400/10 p-4">
+                        <p className="text-xs text-white/65">Receitas</p>
+                        <p className="mt-2 text-lg font-semibold text-white">R$ 8.900,00</p>
+                        <p className="mt-1 text-[11px] text-white/55">Entrada total do mês</p>
+                      </div>
+                      <div className="rounded-2xl border border-orange-400/15 bg-orange-400/10 p-4">
+                        <p className="text-xs text-white/65">Despesas</p>
+                        <p className="mt-2 text-lg font-semibold text-white">R$ 4.200,00</p>
+                        <p className="mt-1 text-[11px] text-white/55">Saídas registradas no período</p>
+                      </div>
+                      <div className="rounded-2xl border border-sky-400/15 bg-sky-400/10 p-4">
+                        <p className="text-xs text-white/65">Fatura de cartão</p>
+                        <p className="mt-2 text-lg font-semibold text-white">R$ 2.180,00</p>
+                        <p className="mt-1 text-[11px] text-white/55">Vence em 10 dias</p>
+                      </div>
+                      <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                        <p className="text-xs text-white/65">Relatórios</p>
+                        <p className="mt-2 text-sm font-semibold text-white">Resumo mensal disponível</p>
+                        <p className="mt-1 text-[11px] text-white/55">
+                          Fluxo de caixa e comparativo por categoria
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
