@@ -439,11 +439,7 @@ export default function App() {
 
         <section id="projetos" className="border-t border-white/5">
           <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
-            <SectionTitle
-              eyebrow="PROJETOS"
-              title="Apps em que atuei"
-              subtitle="Links para a Play Store (quando disponíveis). Se você quiser, eu também adiciono prints e detalhes de contribuição por projeto."
-            />
+            <SectionTitle eyebrow="PROJETOS" title="Apps em que atuei" />
 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
               {PLAY_STORE_APPS.map((app) => (
