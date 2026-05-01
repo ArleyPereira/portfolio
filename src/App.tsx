@@ -275,7 +275,8 @@ export default function App() {
                 <div className="flex items-start justify-between gap-6">
                   <div>
                     <p className="text-sm font-semibold text-white/90">Americanas</p>
-                    <p className="mt-1 text-xs text-white/55">Desenvolvedor Android • 01/2022 — Atual</p>
+                    <p className="mt-2 text-xs text-white/80">Desenvolvedor Android</p>
+                    <p className="mt-0.5 text-xs text-white/55">03/2022 — 04/2026</p>
                   </div>
                   <Pill>Delivery</Pill>
                 </div>
@@ -321,7 +322,8 @@ export default function App() {
                 <div className="flex items-start justify-between gap-6">
                   <div>
                     <p className="text-sm font-semibold text-white/90">ComproPay</p>
-                    <p className="mt-1 text-xs text-white/55">Desenvolvedor Android • 01/2021 — 12/2021</p>
+                    <p className="mt-2 text-xs text-white/80">Desenvolvedor Android</p>
+                    <p className="mt-0.5 text-xs text-white/55">01/2021 — 12/2021</p>
                   </div>
                   <Pill>Pagamentos</Pill>
                 </div>
@@ -343,7 +345,8 @@ export default function App() {
                 <div className="flex items-start justify-between gap-6">
                   <div>
                     <p className="text-sm font-semibold text-white/90">Vitória Soft do Brasil</p>
-                    <p className="mt-1 text-xs text-white/55">Suporte técnico • 05/2019 — 06/2021</p>
+                    <p className="mt-2 text-xs text-white/80">Suporte técnico</p>
+                    <p className="mt-0.5 text-xs text-white/55">05/2019 — 06/2021</p>
                   </div>
                   <Pill>Suporte</Pill>
                 </div>
