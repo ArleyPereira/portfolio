@@ -222,6 +222,8 @@ export default function App() {
           <div className="flex items-center gap-2">
             <a
               href={LINKS.cv}
+              target="_blank"
+              rel="noreferrer"
               className="hidden rounded-xl bg-gradient-to-r from-[color:var(--color-accent-green)] to-[color:var(--color-accent-green-2)] px-4 py-2 text-sm font-semibold text-black shadow-[var(--shadow-soft)] transition hover:-translate-y-0.5 md:inline-flex"
             >
               Baixar currículo (PDF)
@@ -254,6 +256,8 @@ export default function App() {
               </ExternalLink>
               <a
                 href={LINKS.cv}
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/7 md:hidden"
               >
                 Baixar currículo (PDF)
