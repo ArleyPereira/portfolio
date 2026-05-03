@@ -239,9 +239,10 @@ export default function App() {
               Desenvolvedor Android com foco em apps escaláveis e alta performance.
             </h1>
             <p className="mt-5 text-pretty text-base text-[color:var(--color-muted)] md:text-lg">
-              Kotlin, Jetpack Compose e arquitetura multi-módulos. Integração de APIs, Firebase e
-              bibliotecas como Hilt e Coroutines para entregar produtos com qualidade técnica e ótima
-              experiência do usuário.
+              Atuação com Kotlin, Jetpack Compose, Compose Multiplatform, aplicando Clean Architecture
+              e arquitetura multi-módulos para garantir escalabilidade e organização do código.
+              Experiência com injeção de dependência, Coroutines, integração de APIs REST, Firebase,
+              testes unitários e instrumentados, CI/CD e publicação na Play Store.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
