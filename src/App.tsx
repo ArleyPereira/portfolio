@@ -12,6 +12,7 @@ const LINKS = {
   email: 'dev.arley.santana@gmail.com',
   whatsapp: 'https://wa.me/5527996375733',
   valorizze: 'https://valorizze.app/',
+  brtesters: 'https://brtesters.app/',
 }
 
 const PLAY_STORE_APPS = [
@@ -35,6 +36,33 @@ const PLAY_STORE_APPS = [
     description:
       'Aplicativo Android de uso interno/operacional, com foco em rotinas e produtividade. Atuei em manutenção, correção de bugs e melhorias para elevar estabilidade e usabilidade.',
     iconSrc: iconSpock,
+  },
+]
+
+const BRTESTERS_BETA_APPS = [
+  {
+    name: 'FlowPay',
+    category: 'Finanças',
+    description: 'Gestão financeira para autônomos com visão diária de caixa.',
+    enrolledTesters: 8,
+    neededTesters: 12,
+    accentClass: 'from-blue-500 to-cyan-400',
+  },
+  {
+    name: 'Pulse AI',
+    category: 'IA',
+    description: 'Rotinas, checkpoints e sessões de foco com sugestões contextuais.',
+    enrolledTesters: 11,
+    neededTesters: 12,
+    accentClass: 'from-violet-500 to-fuchsia-400',
+  },
+  {
+    name: 'HealTrack',
+    category: 'Saúde',
+    description: 'Lembretes de medicação, água e evolução de hábitos.',
+    enrolledTesters: 6,
+    neededTesters: 12,
+    accentClass: 'from-emerald-500 to-teal-400',
   },
 ]
 
@@ -213,6 +241,9 @@ export default function App() {
             </a>
             <a className="hover:text-white" href="#projeto-pessoal">
               Projeto pessoal
+            </a>
+            <a className="hover:text-white" href="#brtesters">
+              BRTesters
             </a>
             <a className="hover:text-white" href="#contato">
               Contato
@@ -585,6 +616,142 @@ export default function App() {
                           Fluxo de caixa e comparativo por categoria
                         </p>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="brtesters" className="border-t border-white/5">
+          <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
+            <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-[#f8fbff] p-5 text-slate-950 shadow-[var(--shadow-soft)] md:p-8">
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.16),transparent_55%)]" />
+              <div className="pointer-events-none absolute right-0 top-0 h-72 w-72 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.12),transparent_62%)]" />
+
+              <div className="relative">
+                <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
+                  <div>
+                    <h2 className="text-balance text-4xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+                      Conecte apps Android prontos a testadores reais por 14 dias.
+                    </h2>
+                    <p className="mx-auto mt-4 max-w-2xl text-pretty text-sm leading-6 text-slate-600 md:text-base">
+                      Um marketplace para desenvolvedores publicarem seus apps em beta, acompanhar
+                      inscritos e encontrar testadores ativos para o processo fechado da Google Play.
+                    </p>
+                  </div>
+
+                  <a
+                    href={LINKS.brtesters}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={classNames(
+                      'inline-flex w-full items-center justify-center gap-3 rounded-[20px] bg-slate-950 px-8 py-4',
+                      'text-base font-semibold text-white shadow-[0_18px_50px_rgba(15,23,42,0.28)] transition',
+                      'hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-[0_22px_70px_rgba(37,99,235,0.28)]',
+                      'focus-visible:outline-none sm:w-auto',
+                    )}
+                  >
+                    Abrir BRTesters
+                    <span aria-hidden className="text-white/55">
+                      ↗
+                    </span>
+                  </a>
+                </div>
+
+                <div className="mt-8 rounded-[26px] border border-slate-200 bg-white/90 p-4 shadow-[0_24px_70px_rgba(15,23,42,0.10)] backdrop-blur md:p-6">
+                  <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                    <div>
+                      <p className="text-2xl font-semibold tracking-tight text-slate-950">
+                        Aplicativos disponíveis em beta
+                      </p>
+                      <p className="mt-1 text-sm text-slate-500">
+                        Cards com categoria, meta de testadores e progresso de participação.
+                      </p>
+                    </div>
+
+                    <div className="flex min-w-0 items-center gap-2 overflow-hidden">
+                      {['Todos', 'Finanças', 'IA', 'Saúde'].map((category, index) => (
+                        <span
+                          key={category}
+                          className={classNames(
+                            'shrink-0 rounded-full px-4 py-2 text-sm font-medium',
+                            index === 0
+                              ? 'bg-slate-950 text-white shadow-[0_12px_28px_rgba(15,23,42,0.18)]'
+                              : 'bg-slate-100 text-slate-600',
+                          )}
+                        >
+                          {category}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-3">
+                    {BRTESTERS_BETA_APPS.map((app) => {
+                      const progress = Math.round((app.enrolledTesters / app.neededTesters) * 100)
+
+                      return (
+                        <article
+                          key={app.name}
+                          className="rounded-[22px] border border-slate-200 bg-white p-5 shadow-[0_18px_45px_rgba(15,23,42,0.08)] transition hover:-translate-y-0.5 hover:border-blue-200"
+                        >
+                          <div className="flex items-start gap-3">
+                            <div
+                              className={classNames(
+                                'grid size-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-br text-sm font-bold text-white shadow-[0_12px_26px_rgba(15,23,42,0.16)]',
+                                app.accentClass,
+                              )}
+                            >
+                              {app.name
+                                .split(' ')
+                                .map((part) => part[0])
+                                .join('')}
+                            </div>
+                            <div className="min-w-0">
+                              <h3 className="truncate text-lg font-semibold text-slate-950">
+                                {app.name}
+                              </h3>
+                              <p className="mt-0.5 text-sm font-medium text-slate-500">
+                                {app.category}
+                              </p>
+                            </div>
+                          </div>
+
+                          <p className="mt-4 min-h-12 text-sm leading-6 text-slate-600">
+                            {app.description}
+                          </p>
+
+                          <div className="mt-5">
+                            <div className="flex items-center justify-between text-xs font-medium text-slate-500">
+                              <span>{app.enrolledTesters} testadores inscritos</span>
+                              <span>{app.neededTesters} necessários</span>
+                            </div>
+                            <div className="mt-2 h-2.5 overflow-hidden rounded-full bg-slate-100">
+                              <div
+                                className={classNames('h-full rounded-full bg-gradient-to-r', app.accentClass)}
+                                style={{ width: `${progress}%` }}
+                              />
+                            </div>
+                          </div>
+                        </article>
+                      )
+                    })}
+                  </div>
+
+                  <div className="mt-5 grid grid-cols-1 gap-3 md:grid-cols-3">
+                    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                      <p className="text-2xl font-semibold text-slate-950">14 dias</p>
+                      <p className="mt-1 text-sm text-slate-500">Ciclo de teste fechado</p>
+                    </div>
+                    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                      <p className="text-2xl font-semibold text-slate-950">Ranking</p>
+                      <p className="mt-1 text-sm text-slate-500">Testadores mais ativos</p>
+                    </div>
+                    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                      <p className="text-2xl font-semibold text-slate-950">Dashboard</p>
+                      <p className="mt-1 text-sm text-slate-500">Acompanhamento por app</p>
                     </div>
                   </div>
                 </div>
