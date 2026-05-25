@@ -242,9 +242,6 @@ export default function App() {
             <a className="hover:text-white" href="#projeto-pessoal">
               Projeto pessoal
             </a>
-            <a className="hover:text-white" href="#brtesters">
-              BRTesters
-            </a>
             <a className="hover:text-white" href="#contato">
               Contato
             </a>
