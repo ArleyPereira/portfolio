@@ -3,6 +3,8 @@ import fotoArley from './assets/foto-arley.jpeg'
 import iconComproPay from './assets/apps/compropay.png'
 import iconSpock from './assets/apps/spock.png'
 import iconEntregaFlash from './assets/apps/americanas-entrega-flash.png'
+import googlePlayBadge from './assets/stores/google-play-badge.svg'
+import appStoreBadge from './assets/stores/app-store-badge.svg'
 
 const LINKS = {
   linkedin: 'https://www.linkedin.com/in/arley-santana-53546918b',
@@ -92,37 +94,6 @@ function IconYouTube({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
       <path d="M23.5 6.2c-.3-1.1-1.1-1.9-2.2-2.2C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.3.5C1.6 4.3.8 5.1.5 6.2 0 8.1 0 12 0 12s0 3.9.5 5.8c.3 1.1 1.1 1.9 2.2 2.2 1.8.5 9.3.5 9.3.5s7.5 0 9.3-.5c1.1-.3 1.9-1.1 2.2-2.2.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.5V8.5L15.8 12 9.5 15.5z" />
-    </svg>
-  )
-}
-
-function IconGooglePlay({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
-      <path
-        fill="#EA4335"
-        d="M1.5 1.6v20.8c0 .5.55.8 1 .55l11.2-6.45L2.5 1.05c-.45-.25-1 .05-1 .55z"
-      />
-      <path
-        fill="#FBBC04"
-        d="M14.7 12 22.1 7.7c.55-.3.55-1.1 0-1.4L14.7 2l-6.45 3.7L14.7 12z"
-      />
-      <path
-        fill="#34A853"
-        d="M14.7 12 8.25 15.7 1.5 22.4c-.45.25-1-.05-1-.55V1.6c0-.5.55-.8 1-.55l6.75 6.75L14.7 12z"
-      />
-      <path
-        fill="#4285F4"
-        d="M14.7 12 22.1 16.3c.55.3.55 1.1 0 1.4L8.25 20.3 14.7 12z"
-      />
-    </svg>
-  )
-}
-
-function IconAppStore({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
-      <path d="M16.365 1.43c0 1.14-.42 2.27-1.17 3.16-.9 1.07-2.38 1.9-3.83 1.78-.14-1.1.46-2.27 1.2-3.05.84-.98 2.3-1.7 3.8-1.89zM20.88 17.14c-.58 1.33-.86 1.93-1.62 3.11-1.05 1.62-2.54 3.64-4.38 3.65-1.64.01-2.06-1.07-4.28-1.08-2.22-.01-2.7 1.09-4.34 1.07-1.84-.03-3.24-2.01-4.29-3.63-2.95-4.54-3.26-9.87-1.44-12.7 1.28-1.97 3.3-3.13 5.2-3.13 2.04 0 3.32 1.09 5.01 1.09 1.62 0 2.61-1.09 4.94-1.09 1.77 0 3.64.96 4.92 2.62-4.33 2.36-3.62 8.5.62 10.19z" />
     </svg>
   )
 }
@@ -639,7 +610,7 @@ export default function App() {
                     <Pill>Compose Multiplatform</Pill>
                   </div>
 
-                  <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                  <div className="mt-8 flex flex-wrap items-center gap-3">
                     <a
                       href={LINKS.valorizze}
                       target="_blank"
@@ -658,32 +629,42 @@ export default function App() {
                       </span>
                     </a>
 
-                    <div className="inline-flex w-full items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-xs text-white/55 sm:w-auto">
-                      <span>Apps nas lojas:</span>
-                      <a
-                        href={LINKS.valorizzePlayStore}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label="Valorizze na Google Play"
-                        className={classNames(
-                          'grid size-9 place-items-center rounded-xl border border-white/10 bg-white/5 transition',
-                          'hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10 focus-visible:outline-none',
-                        )}
-                      >
-                        <IconGooglePlay className="size-5" />
-                      </a>
-                      <button
-                        type="button"
-                        aria-label="Valorizze na App Store"
-                        onClick={() => setValorizzeAppStoreDialogOpen(true)}
-                        className={classNames(
-                          'grid size-9 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/80 transition',
-                          'hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10 focus-visible:outline-none',
-                        )}
-                      >
-                        <IconAppStore className="size-5" />
-                      </button>
-                    </div>
+                    <a
+                      href={LINKS.valorizzePlayStore}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Valorizze na Google Play"
+                      className={classNames(
+                        'inline-flex shrink-0 rounded-lg transition',
+                        'hover:-translate-y-0.5 hover:opacity-90 focus-visible:outline-none',
+                      )}
+                    >
+                      <img
+                        src={googlePlayBadge}
+                        alt=""
+                        className="h-10 w-auto"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </a>
+
+                    <button
+                      type="button"
+                      aria-label="Valorizze na App Store"
+                      onClick={() => setValorizzeAppStoreDialogOpen(true)}
+                      className={classNames(
+                        'inline-flex shrink-0 rounded-lg transition',
+                        'hover:-translate-y-0.5 hover:opacity-90 focus-visible:outline-none',
+                      )}
+                    >
+                      <img
+                        src={appStoreBadge}
+                        alt=""
+                        className="h-10 w-auto"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </button>
                   </div>
                 </div>
 
