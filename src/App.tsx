@@ -422,7 +422,7 @@ export default function App() {
                 {
                   title: 'Arquitetura',
                   items: [
-                    'Clean Architecture',
+                    'MVVM, MVI e Clean Architecture',
                     'Arquitetura multi-módulos',
                     'Injeção de dependência (Hilt, Koin)',
                   ],
