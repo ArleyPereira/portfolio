@@ -3,6 +3,8 @@ import fotoArley from './assets/foto-arley.jpeg'
 import iconComproPay from './assets/apps/compropay.png'
 import iconSpock from './assets/apps/spock.png'
 import iconEntregaFlash from './assets/apps/americanas-entrega-flash.png'
+import iconGooglePlay from './assets/stores/icon-google-play.png'
+import iconAppStore from './assets/stores/icon-app-store.png'
 
 const LINKS = {
   linkedin: 'https://www.linkedin.com/in/arley-santana-53546918b',
@@ -96,26 +98,10 @@ function IconYouTube({ className }: { className?: string }) {
   )
 }
 
-function IconAndroid({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
-      <path d="M17.6 9.48 19.44 6.3c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67c-.19-.28-.54-.37-.83-.22-.3.16-.42.54-.26.85l1.84 3.18C4.3 11.23 3 13.61 3 16.28h18c0-2.67-1.3-5.05-3.4-6.8zM9.5 14.75c-.41 0-.75-.34-.75-.75s.34-.75.75-.75.75.34.75.75-.34.75-.75.75zm5 0c-.41 0-.75-.34-.75-.75s.34-.75.75-.75.75.34.75.75-.34.75-.75.75z" />
-    </svg>
-  )
-}
-
-function IconApple({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
-      <path d="M16.365 1.43c0 1.14-.42 2.27-1.17 3.16-.9 1.07-2.38 1.9-3.83 1.78-.14-1.1.46-2.27 1.2-3.05.84-.98 2.3-1.7 3.8-1.89zM20.88 17.14c-.58 1.33-.86 1.93-1.62 3.11-1.05 1.62-2.54 3.64-4.38 3.65-1.64.01-2.06-1.07-4.28-1.08-2.22-.01-2.7 1.09-4.34 1.07-1.84-.03-3.24-2.01-4.29-3.63-2.95-4.54-3.26-9.87-1.44-12.7 1.28-1.97 3.3-3.13 5.2-3.13 2.04 0 3.32 1.09 5.01 1.09 1.62 0 2.61-1.09 4.94-1.09 1.77 0 3.64.96 4.92 2.62-4.33 2.36-3.62 8.5.62 10.19z" />
-    </svg>
-  )
-}
-
-const storeButtonClass = classNames(
-  'inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-4 py-2.5',
-  'text-sm font-medium text-black',
-  'transition hover:-translate-y-0.5 hover:bg-white/95',
+const valorizzeActionButtonClass = classNames(
+  'inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-2xl',
+  'bg-white px-6 py-3 text-sm font-semibold text-black shadow-[0_18px_55px_rgba(0,0,0,0.45)]',
+  'transition hover:-translate-y-0.5 hover:shadow-[0_22px_70px_rgba(0,0,0,0.55)]',
   'focus-visible:outline-none',
 )
 
@@ -636,13 +622,7 @@ export default function App() {
                       href={LINKS.valorizze}
                       target="_blank"
                       rel="noreferrer"
-                      className={classNames(
-                        'inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-2xl',
-                        'bg-white px-6 py-3 text-sm font-semibold text-black shadow-[0_18px_55px_rgba(0,0,0,0.45)]',
-                        'transition hover:-translate-y-0.5 hover:shadow-[0_22px_70px_rgba(0,0,0,0.55)]',
-                        'focus-visible:outline-none',
-                        'sm:w-auto',
-                      )}
+                      className={classNames(valorizzeActionButtonClass, 'w-full sm:w-auto')}
                     >
                       Abrir site
                       <span aria-hidden className="text-black/45">
@@ -654,18 +634,18 @@ export default function App() {
                       href={LINKS.valorizzePlayStore}
                       target="_blank"
                       rel="noreferrer"
-                      className={storeButtonClass}
+                      className={valorizzeActionButtonClass}
                     >
-                      <IconAndroid className="size-4" />
+                      <img src={iconGooglePlay} alt="" className="size-4" decoding="async" />
                       Google Play
                     </a>
 
                     <button
                       type="button"
                       onClick={() => setValorizzeAppStoreDialogOpen(true)}
-                      className={storeButtonClass}
+                      className={valorizzeActionButtonClass}
                     >
-                      <IconApple className="size-4" />
+                      <img src={iconAppStore} alt="" className="size-4" decoding="async" />
                       App Store
                     </button>
                   </div>
